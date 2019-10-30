@@ -1,11 +1,11 @@
 {% if site.layout == 'stacked' %}
   {% assign metadata_styles = 'd-md-inline-block mx-3 mb-1 mb-md-0' %}
 {% else %}
-  {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
+  {% assign metadata_styles = 'd-flex flex-items-center col-centered mb-3' %}
 {% endif %}
 
-<img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;">
-<h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</h1>
+<h1 class = "text-center"><img src="http://croma.eecs.umich.edu/images/entries/full-size/yigeliu_profile-pic-thumb.jpg" class="circle mb-5" align="middle" style="max-width: 400px;"></h1>
+<h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed text-center">Yige Liu</h1>
 <p class="mb-3 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
   {{ user.bio }}
 </p>
@@ -20,21 +20,21 @@
         </a>
       </div>
     {% endif %}
-    {% if user.email %}
+    {% if true %}
       <div class="{{ metadata_styles }}">
         {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
-        <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          {{ user.email }}
+        <a href="yigel@umich.edu" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+          yigel@umich.edu
         </a>
       </div>
     {% endif %}
-    {% if user.location %}
+    {% if true %}
       <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
         {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
-        {{ user.location }}
+        1760 Broadway Street, Ann Arbor, Michigan, 48105
       </div>
     {% endif %}
-    {% if site.social_media %}
+    {% if true %}
       <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
         {% for account in site.social_media %}
           <div class="{% unless forloop.last == true %}mr-3{% endunless %} mb-3">

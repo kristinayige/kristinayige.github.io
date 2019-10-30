@@ -25,6 +25,18 @@
   vertical-align: middle;
 }
 
+
+#nav {
+  background-color: #282828;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  cursor: default;
+}
+
 .article {
   h1, h2, h3, h4,
   .highlight {

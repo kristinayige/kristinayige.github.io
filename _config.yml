@@ -18,24 +18,31 @@ defaults:
 
 projects:
   sort_by: pushed
-  # sort_by options:
-  #   - pushed
-  #   - stars
+  sort_by options:
+    - pushed
+    - stars
   limit: 9
   exclude:
     archived: false
-    forks: true
+    # forks: true
     projects:
-    # - repo-name
+    - personal-website
+    - 996.ICU
+    - darknet
+    - caffe-yolov3
+    - CarlaTests
+    - carla
+    - https-github.com-cs61bl-362
+    - Show-Attend-and-Tell
 
-# social_media:
+social_media:
   # behance: your_username
   # dribbble: your_username
-  # facebook: your_username
+  facebook: Yige Liu
   # hackerrank: your_username
   # instagram: your_username
   # keybase: your_username
-  # linkedin: your_username
+  linkedin: yige-kristina-liu
   # mastodon: your_username
   # medium: your_username
   # stackoverflow: your_user_id
@@ -47,12 +54,10 @@ projects:
   # youtube: your_username
 
 topics:
-  - name: CSS
-    web_url: https://github.com/topics/css
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
+  - name: CroMa Lab
+    web_url: http://croma.eecs.umich.edu/croma.html
+    image_url: http://croma.eecs.umich.edu/images/entries/full-size/croma-lab_logo_um-clear_square.png
 
-  - name: Web design
-
-  - name: Sass
-    web_url: https://github.com/topics/sass
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/sass/sass.png
+  - name: Fouhey AI Lab
+    web_url: http://fouheylab.eecs.umich.edu
+    image_url: https://pbs.twimg.com/profile_images/905532722013229057/FIL1DVHL_400x400.jpg

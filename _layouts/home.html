@@ -1,4 +1,65 @@
 {% include header.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+
+ <style>
+    .wrapper {
+        text-align: center;
+    }
+
+    .wrapper ul {
+      /* display: inline-block; */
+      list-style-type: none;
+      font-family: "Raleway";
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-weight: 600;
+      overflow: hidden;
+      text-align: center;
+      background-color: #233f57;
+    }
+    
+    .wrapper li {
+      display: inline-block;
+    }
+    
+    .wrapper li a {
+      display: block;
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    .wrapper li a:hover {
+      background-color: #111;
+    }
+    </style>
+    
+<div class = "wrapper">
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="project.html">Projects</a></li>
+    </ul>
+</div>
 
 {% if site.layout == 'stacked' %}
   <div class="container-lg py-6 p-responsive text-center">
@@ -12,31 +73,33 @@
       {% include projects.html %}
     </div>
 
+    <div class="my-6">
+        {% include thoughts.html %}
+    </div>
+
     {% if site.topics %}
       <div class="my-6">
         {% include interests.html %}
       </div>
     {% endif %}
 
-    {% unless posts_total == 0 %}
-      <div class="my-6">
-        {% include thoughts.html %}
-      </div>
-    {% endunless %}
   </div>
 {% else %}
   <div class="d-md-flex min-height-full {% unless site.style == 'dark' %}border-md-bottom{% endunless %}">
-    <div class="flex-self-stretch {% if site.style == 'dark' %}bg-gray-dark{% else %}border-md-right border-gray-light bg-white{% endif %} col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6">
+      <!-- border-gray-light border-md-right -->
+    <div  class="flex-self-stretch {% if site.style == 'dark' %}bg-gray-dark{% else %} bg-white {% endif %} col-md-5 col-lg-350 col-xl-250 col-centered px-4 px-md-6 px-lg-7 py-6">
       {% include masthead.html metadata=true %}
     </div>
 
-    <div class="col-md-7 col-lg-8 col-xl-9 px-4 py-6 px-lg-7 border-top border-md-top-0 bg-gray-light" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
-      <div class="mx-auto" style="max-width: 900px;">
+    <div style="background-image: url(https://www.mazakchat.net/wp-content/uploads/2018/12/22.jpg)" class="col-md-6 col-lg-8 col-xl-9 px-4 py-6 px-lg-7 border-top border-md-top-0 bg-gray-light" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
+      <div class="mx-auto" style= "max-width: 900px;">
         {% unless content == ""  %}
           <div class="f4 {% if site.style == 'dark' %}text-white{% endif %} mb-6">
             {{ content }}
           </div>
         {% endunless %}
+
+        {% include thoughts.html %}
 
         {% include projects.html %}
 
@@ -44,9 +107,6 @@
           {% include interests.html %}
         {% endif %}
 
-        {% unless posts_total == 0 %}
-          {% include thoughts.html %}
-        {% endunless %}
       </div>
     </div>
   </div>
